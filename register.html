@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css"  href="register.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h2>REGISTRATION FORM</h2>
+        </div>
+
+        <form class="form" id="form" action="info.html" method="get">
+            <!-- Username -->
+            <div class="form_control ">
+                <label>Name</label>
+                <input type="text" name="" id="username"     autocomplete="off"  />
+                <i class="fa-solid fa-check"></i>
+                <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+                <small>Error</small>
+            </div>
+
+               <!-- Address -->
+               <div class="form_control ">
+                <label>Address</label>
+                <input type="text" name="" id="address"     autocomplete="off" />
+                <i class="fa-solid fa-check"></i>
+                <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+                <small>Error</small>
+            </div>
+
+
+               <!-- Email -->
+               <div class="form_control">
+                <label>Email ID</label>
+                <input type="email" name="" id="email"    autocomplete="off" />
+                <i class="fa-solid fa-check"></i>
+                <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+                <small>Error</small>
+            </div>
+
+              <!-- Contact Number -->
+              <div class="form_control">
+                <label>Phone Number</label>
+                <input type="number" name="" id="phone"    autocomplete="off"  />
+                <i class="fa-solid fa-check"></i>
+                <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+                <small>Error</small>
+            </div>
+
+             <!--Password -->
+             <div class="form_control">
+                <label>Password</label>
+                <input type="password" name="" id="password"/ autocomplete="off"/>
+                <i class="fa-solid fa-check"></i>
+                <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+                <small>Error</small>
+            </div>
+
+              <!--Confirm Password -->
+              <div class="form_control ">
+                <label>Confirm Password</label>
+                <input type="password" name="" id="cpassword" autocomplete="off" />
+                <i class="fa-solid fa-check"></i>
+                <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+                <small>Error</small>
+            </div> 
+<!-- give reg number to customer -->
+
+           
+            
+                <input type="submit" value="Submit" name=""  class="btn" />
+
+
+        </form>
+    </div>
+
+    <script>
+
+        
+        const form = document.getElementById('form')
+        const username = document.getElementById('username');
+        const address = document.getElementById('address');
+        const email = document.getElementById('email');
+        const phone = document.getElementById('phone');
+        const password = document.getElementById('password');
+        const cpassword = document.getElementById('cpassword');
+
+        form.addEventListener('submit' , (event) => { 
+           // event.preventDefault();
+           isValidate()
+          
+        })
+
+       
+        const isValidate=()=>{
+            if(username.value=== ""){
+                setErrorMsg(username ,"name cannot be empty")
+            }else if(username.value.length < 2 ){
+                setErrormsg(username,'name min 3 characters');
+            }else{
+                setSuccessMsg(username);
+            }
+
+            if(email.value=== ""){
+                setErrorMsg(email ,"email cannot be empty")
+            }else{
+                setSuccessMsg(email)
+            }
+
+            if(address.value===""){
+                setErrorMsg(address ,"address cannot be empty")
+            }else{
+                setSuccessMsg(address)
+            }
+
+            if(phone.value===""){
+                setErrorMsg(phone ,"Phone Number cannot be empty")
+            }else{
+                setSuccessMsg(phone)
+            }
+
+            if(password.value===""){
+                setErrorMsg(password ,"password cannot be empty")
+            }else{
+                setSuccessMsg(password)
+            }
+        }
+
+        function setErrorMsg (input,msg){
+            const formControl = input.parentElement
+            const small = formControl.querySelector('small');
+            formControl.className = "form_control error";
+            small.innerText = msg;
+        }
+
+        function setSuccessMsg(input){
+            const formControl = input.parentElement;
+            formControl.className = "form_control success";
+        }
+        
+    </script>
+
+</body>
+</html>

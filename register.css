@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&family=Lobster&family=Signika:wght@300&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* font-family: 'Hind Madurai', sans-serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'Signika', sans-serif; */
+
+    --myfont: 'Hind Madurai', sans-serif;
+    --my_btn_font:'Lobster', cursive; 
+    --lg-lightcolor: linear-gradient(to left,#93faa5,#efcfe3);
+    --lg-color:linear-gradient(to left,#b7f4d8,#cdd1e4);
+}
+
+body{
+    background: var(--lg-color);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    font-family: var(--myfont);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.main-container{
+    background-color: #fff;
+    border-radius: 0.5em;
+    -webkit-border-radius:10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    overflow: hidden;
+    /* whatever the device minus 60% */
+    width: calc(100vw-65vw);
+    max-width: 100%;
+}
+
+.header{
+    background: var(--lg-lightcolor);
+    padding: 0.7em 0;
+   
+}
+
+.form {
+    padding: 2rem ;
+}
+
+.form .form_control{
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form_control label{
+    display: inline-block;
+    margin-bottom: 0.3rem;
+}
+
+.form_control input{
+    width: 100%;
+    border: 2px solid #f0f0f0;
+    border-radius: 0.3rem;
+    /* display: block; */
+    padding: 0.3rem;
+}
+
+.form_control input:focus{
+    outline: 0;
+    border-color: #e76d89;
+}
+
+.form_control.success input{
+    border-color: #2ecc71;
+}
+
+.form_control.error input{
+    border-color: #e74c3c;
+}
+
+.form_control i{
+    position: absolute;
+    right: 8%;
+    top: 2.1rem;
+    visibility: hidden;
+}
+
+.form_control.success i.fa-check{
+    color: #0eba55;
+    visibility: visible;
+}
+
+.form_control.success i.fa-circle-exclamation{
+    color: #e74c3c;
+    visibility: hidden;
+}
+
+.form_control.error i.fa-circle-exclamation{
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form_control.error i.fa-check{
+    color: #e74c3c;
+    visibility: hidden;
+}
+
+
+
+.form_control small{
+    color: #ee3622;
+    position: absolute;
+    /* bottom: 0; */
+    left: 0;
+    margin-top: 30px;
+    font-weight: 500;
+    visibility: hidden;
+
+}
+
+.form_control.error small{
+    visibility:visible;
+}
+
+
+.header h2{
+    text-align: center;
+    color: #2e3131;
+    font-family: 'Hind Madurai', sans-serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'Signika', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgb(204, 157, 157), 0 0 1em rgb(189, 189, 216), 0 0 0.2em rgb(208, 208, 225);
+}
+
+.form{
+ 
+}
+
+.form .btn{
+    background: #efcfe3;
+    border-radius: 0.3rem;
+    border: none;
+    outline: none;
+    display: block;
+    font-family: 'Hind Madurai', sans-serif;
+    font-family: 'Lobster', cursive;
+    font-size: 1rem;
+    font-weight: 100;
+    padding: 0.7em ;
+    margin-top: 1rem;
+    width: 100%;
+    text-transform: uppercase;
+    transition: all 1s ease;
+}
+
+.form .btn:hover{
+    background: linear-gradient(to right,#74ebd5,#9face6);
+}
+
+@media(max-width:998px){
+    .main-container{
+        width: calc(100vw-35vw);
+        max-width: 100%;
+    }
+}
